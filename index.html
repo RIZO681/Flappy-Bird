@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flappy Bird!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #87CEEB;
+        }
+
+        #gameCanvas {
+            display: none;
+        }
+
+        .menu, .game-over {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu {
+            display: block;
+        }
+
+        .game-over {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<canvas id="gameCanvas" width="320" height="480"></canvas>
+
+<!-- Главное меню -->
+<div class="menu" id="menu">
+    <h1>Flappy Bird!</h1>
+    <p>Рекорд: <span id="highScore">0</span></p>
+    <button onclick="startGame()">Начать</button>
+    <button onclick="openShop()">Магазин</button>
+    <button onclick="exitGame()">Выход</button>
+</div>
+
+<!-- Экран окончания игры -->
+<div class="game-over" id="gameOver">
+    <h1>Игра окончена</h1>
+    <button onclick="restartGame()">Заново</button>
+    <button onclick="returnToMenu()">В меню</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
