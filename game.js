@@ -168,14 +168,21 @@ function returnToMenu() {
     menu.style.display = 'flex';
 }
 
-// Функции для магазина и выхода
-function openShop() {
-    alert("Магазин пока не доступен.");
-}
-
+// Функция для кнопки выхода
 function exitGame() {
-    alert("Выход из игры.");
-    window.close();  // Работает в некоторых браузерах для закрытия вкладки
+    // Прячем все элементы и выводим сообщение об "выходе"
+    canvas.style.display = 'none';
+    menu.style.display = 'none';
+    gameOverScreen.style.display = 'none';
+
+    // Создаем сообщение об "выходе"
+    const exitMessage = document.createElement('div');
+    exitMessage.innerHTML = "<h1>Вы вышли из игры!</h1><p>Обновите страницу, чтобы начать заново.</p>";
+    exitMessage.style.textAlign = 'center';
+    exitMessage.style.color = '#fff';
+    exitMessage.style.fontSize = '24px';
+
+    document.body.appendChild(exitMessage);
 }
 
 pipeBottomImg.onload = draw;
