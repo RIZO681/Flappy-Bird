@@ -1,6 +1,123 @@
-.game {
-    width: 600px;
-    height: 200px;
-    border-bottom: 1 px solid #000;
-    margin: auto;
+/* Обнуление стандартных стилей браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+#gameCanvas {
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Тень для канваса */
+    border-radius: 10px; /* Закругленные углы для игры */
+}
+
+.menu, .game-over {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu {
+    display: block;
+    animation: fadeIn 1s ease-in-out; /* Анимация появления меню */
+}
+
+.game-over {
+    display: none;
+    animation: fadeIn 1s ease-in-out; /* Анимация появления экрана окончания игры */
+}
+
+h1 {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для кнопок */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-3px); /* Поднимем кнопку при наведении */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(1px); /* Легкий эффект нажатия */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Текст счета */
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    canvas {
+        width: 90%;
+        height: auto;
+    }
 }
