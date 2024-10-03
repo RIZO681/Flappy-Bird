@@ -14,11 +14,12 @@ body {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     font-family: 'Arial', sans-serif;
     color: #333;
+    animation: backgroundShift 10s ease infinite; /* Анимация изменения фона */
 }
 
 #gameCanvas {
     display: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Тень для канваса */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Тень для канваса */
     border-radius: 10px; /* Закругленные углы для игры */
     animation: floatCanvas 3s ease-in-out infinite; /* Анимация плавного движения */
 }
@@ -119,6 +120,19 @@ button:focus {
     }
 }
 
+/* Анимация изменения фона */
+@keyframes backgroundShift {
+    0% {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+}
+
 /* Текст счета */
 #score {
     position: absolute;
@@ -148,4 +162,5 @@ button:focus {
         width: 90%;
         height: auto;
     }
-}
+    }
+        
