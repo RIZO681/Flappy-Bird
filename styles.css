@@ -11,9 +11,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* Статичный градиент */
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     font-family: 'Arial', sans-serif;
     color: #333;
+    animation: smoothBackgroundChange 15s ease-in-out infinite; /* Плавная смена фона */
 }
 
 #gameCanvas {
@@ -116,6 +117,19 @@ button:focus {
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+/* Плавная смена фона */
+@keyframes smoothBackgroundChange {
+    0% {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     }
 }
 
