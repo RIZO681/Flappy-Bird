@@ -11,10 +11,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background-color: #4facfe; /* Начальный цвет */
     font-family: 'Arial', sans-serif;
     color: #333;
-    animation: smoothBackgroundChange 20s ease-in-out infinite; /* Плавная смена фона */
+    animation: smoothBackgroundColorChange 15s ease-in-out infinite; /* Плавная смена цвета фона */
 }
 
 #gameCanvas {
@@ -120,22 +120,19 @@ button:focus {
     }
 }
 
-/* Плавная смена фона */
-@keyframes smoothBackgroundChange {
+/* Плавная смена цвета фона */
+@keyframes smoothBackgroundColorChange {
     0% {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background-color: #4facfe;
     }
-    25% {
-        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    33% {
+        background-color: #43e97b;
     }
-    50% {
-        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    }
-    75% {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    66% {
+        background-color: #fa709a;
     }
     100% {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background-color: #f093fb;
     }
 }
 
@@ -168,4 +165,4 @@ button:focus {
         width: 90%;
         height: auto;
     }
-}
+    }
