@@ -14,7 +14,7 @@ body {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     font-family: 'Arial', sans-serif;
     color: #333;
-    animation: smoothBackgroundChange 15s ease-in-out infinite; /* Плавная смена фона */
+    animation: smoothBackgroundChange 20s ease-in-out infinite; /* Плавная смена фона */
 }
 
 #gameCanvas {
@@ -125,7 +125,13 @@ button:focus {
     0% {
         background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     }
+    25% {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
     50% {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+    75% {
         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     }
     100% {
