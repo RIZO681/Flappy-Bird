@@ -14,7 +14,7 @@ let gravity = 1.5;
 let velocityY = 0;
 let score = 0;
 let isGameOver = false;
-let highScore = localStorage.getItem('highScore') || 0;
+let highScore = localStorage.getItem('highScore') || 0;  // Загрузка рекорда из localStorage
 let isGameRunning = false;
 
 // Загрузка изображений
@@ -35,8 +35,16 @@ const flySound = new Audio('alexmuz.mp3');
 const scoreSound = new Audio('score.wav');
 const loseSound = new Audio('sad_music.wav');
 
-// Массив для хранения труб
+// Массив для труб
 const pipes = [];
+
+// Обновление отображения рекорда на экране
+function updateHighScoreDisplay() {
+    highScoreElement.innerText = highScore;
+}
+
+// Изначально показываем рекорд
+updateHighScoreDisplay();
 
 // Управление движением птички
 document.addEventListener('keydown', moveUp);
@@ -86,11 +94,15 @@ function draw() {
             isGameOver = true;
             isGameRunning = false;  // Останавливаем игру при проигрыше
             loseSound.play();
+
+            // Обновляем рекорд, если счет выше текущего рекорда
             if (score > highScore) {
                 highScore = score;
-                localStorage.setItem('highScore', highScore);
+                localStorage.setItem('highScore', highScore);  // Сохраняем новый рекорд
+                updateHighScoreDisplay();  // Обновляем отображение рекорда
             }
-            showGameOver();
+
+            showGameOver();  // Показ экрана окончания игры
         }
 
         // Если птичка прошла трубу
@@ -167,4 +179,4 @@ function exitGame() {
 }
 
 pipeBottomImg.onload = draw;
-             
+        
